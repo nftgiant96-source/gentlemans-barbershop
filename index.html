@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gentlemen's Barber | London, Ontario</title>
+  <meta name="description" content="London's premier barbershop for over 20 years. Expert haircuts, fades, beard trims, and hot towel shaves. Three locations across London, Ontario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo logo-img">
+        <img src="logo.jpg" alt="Gentlemen's Barber London" class="logo-image">
+        <span class="logo-main">Gentlemen's</span>
+        <span class="logo-sub">BARBER · LONDON</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Book an Appointment</a>
+    <div class="mobile-social">
+      <a href="https://www.instagram.com/gentlemensbarberlondon/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/gentlemensbarberlondon/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&q=85&auto=format&fit=crop" alt="Gentlemen's Barber interior" loading="eager" fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">London's Premier Barbershop</p>
+      <h1 class="hero-title">Where Style<br><em>Meets Tradition</em></h1>
+      <p class="hero-subtitle">Precision cuts. Expert shaves. A true gentleman's experience.<br>Serving London, Ontario for over 20 years.</p>
+      <div class="hero-ctas">
+        <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Book Your Appointment</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" data-reveal>
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=85&auto=format&fit=crop" alt="Expert barber at work" loading="lazy">
+          <div class="about-badge">
+            <span class="badge-number">20+</span>
+            <span class="badge-text">Years of Excellence</span>
+          </div>
+        </div>
+        <div class="about-text" data-reveal>
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">Craftsmanship<br>You Can Trust</h2>
+          <p class="about-body">Gentlemen's Barber has been London's trusted destination for precision grooming since our founding. With three convenient locations across the city, we bring the classic barbershop experience to every neighbourhood — delivering sharp cuts, expert shaves, and the timeless style every gentleman deserves.</p>
+          <p class="about-body">Our skilled barbers combine traditional techniques with modern styles, ensuring every client leaves looking and feeling their best. Whether you're after a classic taper, a skin fade, or a hot towel shave, we have you covered.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Locations</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">4.5★</span>
+              <span class="stat-label">Google Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Offer</p>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Premium grooming tailored to your style</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cut"></i></div>
+          <h3>Men's Haircut</h3>
+          <p>Classic and contemporary cuts tailored to your face shape and lifestyle. Every cut includes a wash, cut, and style.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
+          <h3>Fade &amp; Taper</h3>
+          <p>Precision fades from skin to scissor cut, blended seamlessly for that clean, sharp finish only an expert barber can deliver.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-feather-alt"></i></div>
+          <h3>Beard Trim</h3>
+          <p>Expert beard shaping and trimming to keep your facial hair looking clean, defined, and well-groomed every time.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-fire-alt"></i></div>
+          <h3>Hot Towel Shave</h3>
+          <p>The full traditional experience — hot towel prep, premium lather, open razor shave, and soothing aftercare treatment.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-circle"></i></div>
+          <h3>Head Shave</h3>
+          <p>A smooth, clean head shave with hot towel treatment for the ultimate polished, close-to-the-skin look.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-star"></i></div>
+          <h3>Straight Razor Shave</h3>
+          <p>A luxurious straight razor shave for the closest, most comfortable shave you will ever experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">The Craft</h2>
+        <p class="section-subtitle">A glimpse inside Gentlemen's Barber</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85&auto=format&fit=crop" alt="Barber at work" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&q=85&auto=format&fit=crop" alt="Barbershop interior" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700&q=85&auto=format&fit=crop" alt="Fresh haircut" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=700&q=85&auto=format&fit=crop" alt="Barber tools" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=85&auto=format&fit=crop" alt="Sharp style" loading="lazy">
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <div class="gallery-cta" data-reveal>
+        <p>Follow us on Instagram for daily inspiration and booking updates</p>
+        <a href="https://www.instagram.com/gentlemensbarberlondon/" target="_blank" rel="noopener" class="btn-outline">
+          <i class="fab fa-instagram"></i> @gentlemensbarberlondon
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATIONS ========== -->
+  <section id="locations" class="locations">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Our Locations</h2>
+        <p class="section-subtitle">Three convenient locations across London, Ontario</p>
+      </div>
+      <div class="locations-grid">
+
+        <div class="location-card" data-reveal>
+          <div class="location-number">01</div>
+          <span class="location-tag">Citi Plaza</span>
+          <h3>Wellington Street</h3>
+          <address>355 Wellington St<br>London, ON N6A 3N7</address>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <a href="tel:5194337200">(519) 433-7200</a>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span>Monday – Saturday</span><br>
+              <span>9:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=355+Wellington+St,+London,+ON" target="_blank" rel="noopener" class="btn-location">
+            Get Directions <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="location-card featured" data-reveal>
+          <div class="location-number">02</div>
+          <span class="location-tag">Masonville Place</span>
+          <h3>Richmond Street</h3>
+          <address>1680 Richmond St<br>London, ON N6G 3Y9</address>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <a href="tel:5196456432">(519) 645-6432</a>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span>Mon – Fri: 10:00 AM – 9:00 PM</span><br>
+              <span>Saturday: 10:00 AM – 8:00 PM</span><br>
+              <span>Sunday: 11:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=1680+Richmond+St,+London,+ON" target="_blank" rel="noopener" class="btn-location">
+            Get Directions <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="location-card" data-reveal>
+          <div class="location-number">03</div>
+          <span class="location-tag">West London</span>
+          <h3>Oxford Street West</h3>
+          <address>551 Oxford St W, Unit A3-101<br>London, ON N6H 0H9</address>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <a href="tel:5196570005">(519) 657-0005</a>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span>Mon – Fri: 10:00 AM – 6:45 PM</span><br>
+              <span>Saturday: 10:00 AM – 5:30 PM</span><br>
+              <span>Sunday: 11:00 AM – 4:30 PM</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=551+Oxford+St+W,+London,+ON" target="_blank" rel="noopener" class="btn-location">
+            Get Directions <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What People Say</p>
+        <h2 class="section-title">Client Reviews</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-reveal>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Best barbershop in London. Yaz does an incredible fade every single time. Always leave feeling like a new man. Worth every penny."</blockquote>
+          <cite>— James M., London ON</cite>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Been coming here for years. Professional, spotless, and the hot towel shave is an experience you have to try at least once in your life."</blockquote>
+          <cite>— David T., London ON</cite>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Nawar is an absolute artist. My beard has never looked this sharp. Highly recommend the full beard trim and shape — game changer."</blockquote>
+          <cite>— Michael R., London ON</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOK CTA ========== -->
+  <section id="contact" class="book-cta">
+    <div class="cta-bg">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80&auto=format&fit=crop&crop=top" alt="Book an appointment" loading="lazy">
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content">
+        <p class="section-eyebrow">Ready?</p>
+        <h2 class="section-title">Book Your Appointment</h2>
+        <p>Reserve your spot online at any of our three London locations.</p>
+        <div class="cta-buttons">
+          <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Masonville — Book Now</a>
+          <a href="https://www.fresha.com/lvp/gentlemens-barber-oxford-street-west-london-eXgEWj" target="_blank" rel="noopener" class="btn-primary">Oxford West — Book Now</a>
+        </div>
+        <div class="cta-contact">
+          <span>Or call us directly:</span>
+          <div class="cta-phones">
+            <a href="tel:5194337200">(519) 433-7200</a>
+            <span class="dot">·</span>
+            <a href="tel:5196456432">(519) 645-6432</a>
+            <span class="dot">·</span>
+            <a href="tel:5196570005">(519) 657-0005</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo logo-img">
+            <img src="logo.jpg" alt="Gentlemen's Barber London" class="logo-image">
+            <span class="logo-main">Gentlemen's</span>
+            <span class="logo-sub">BARBER · LONDON</span>
+          </a>
+          <p>London's premier barbershop for over 20 years. Three locations, one standard of excellence.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/gentlemensbarberlondon/" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/gentlemensbarberlondon/" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://maps.google.com/?q=Gentlemen's+Barber+London+Ontario" target="_blank" rel="noopener" aria-label="Google Maps">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#contact">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-locations">
+          <h4>Our Locations</h4>
+          <div class="footer-location">
+            <strong>Citi Plaza — Wellington St</strong>
+            <span>355 Wellington St · (519) 433-7200</span>
+          </div>
+          <div class="footer-location">
+            <strong>Masonville Place — Richmond St</strong>
+            <span>1680 Richmond St · (519) 645-6432</span>
+          </div>
+          <div class="footer-location">
+            <strong>West London — Oxford St W</strong>
+            <span>551 Oxford St W · (519) 657-0005</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gentlemen's Barber London. All rights reserved.</p>
+        <p class="footer-ig">
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/gentlemensbarberlondon/" target="_blank" rel="noopener">@gentlemensbarberlondon</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
