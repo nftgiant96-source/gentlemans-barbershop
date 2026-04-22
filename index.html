@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gentlemen's Barber | London, Ontario</title>
-  <meta name="description" content="London's premier barbershop for over 20 years. Expert haircuts, fades, beard trims, and hot towel shaves. Three locations across London, Ontario.">
+  <meta name="description" content="London's premier barbershop for over 20 years. Expert haircuts, fades, beard trims, and hot towel shaves. Two locations across London, Ontario.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script async src="//www.instagram.com/embed.js"></script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 
@@ -22,13 +24,16 @@
         <span class="logo-sub">BARBER · LONDON</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#locations">Locations</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <i class="fas fa-sun"></i>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -38,11 +43,11 @@
   <!-- Mobile Nav Overlay -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#locations">Locations</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Book an Appointment</a>
     <div class="mobile-social">
@@ -63,7 +68,7 @@
       <p class="hero-subtitle">Precision cuts. Expert shaves. A true gentleman's experience.<br>Serving London, Ontario for over 20 years.</p>
       <div class="hero-ctas">
         <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Book Your Appointment</a>
-        <a href="#services" class="btn-outline">Our Services</a>
+        <a href="services.html" class="btn-outline">Our Services</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -90,7 +95,7 @@
           <p class="about-body">Our skilled barbers combine traditional techniques with modern styles, ensuring every client leaves looking and feeling their best. Whether you're after a classic taper, a skin fade, or a hot towel shave, we have you covered.</p>
           <div class="about-stats">
             <div class="stat">
-              <span class="stat-number">3</span>
+              <span class="stat-number">2</span>
               <span class="stat-label">Locations</span>
             </div>
             <div class="stat-divider"></div>
@@ -160,26 +165,15 @@
         <h2 class="section-title">The Craft</h2>
         <p class="section-subtitle">A glimpse inside Gentlemen's Barber</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item tall">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85&auto=format&fit=crop" alt="Barber at work" loading="lazy">
-          <div class="gallery-overlay"></div>
+      <div class="ig-embed-grid">
+        <div class="ig-embed-item">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DARvKzlMsW6/?utm_source=ig_embed" data-instgrm-version="14"></blockquote>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&q=85&auto=format&fit=crop" alt="Barbershop interior" loading="lazy">
-          <div class="gallery-overlay"></div>
+        <div class="ig-embed-item">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DB2BGWrxB_B/?utm_source=ig_embed" data-instgrm-version="14"></blockquote>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700&q=85&auto=format&fit=crop" alt="Fresh haircut" loading="lazy">
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=700&q=85&auto=format&fit=crop" alt="Barber tools" loading="lazy">
-          <div class="gallery-overlay"></div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=85&auto=format&fit=crop" alt="Sharp style" loading="lazy">
-          <div class="gallery-overlay"></div>
+        <div class="ig-embed-item">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C9DhzRApWH9/?utm_source=ig_embed" data-instgrm-version="14"></blockquote>
         </div>
       </div>
       <div class="gallery-cta" data-reveal>
@@ -197,33 +191,12 @@
       <div class="section-header">
         <p class="section-eyebrow">Find Us</p>
         <h2 class="section-title">Our Locations</h2>
-        <p class="section-subtitle">Three convenient locations across London, Ontario</p>
+        <p class="section-subtitle">Two convenient locations across London, Ontario</p>
       </div>
       <div class="locations-grid">
 
-        <div class="location-card" data-reveal>
-          <div class="location-number">01</div>
-          <span class="location-tag">Citi Plaza</span>
-          <h3>Wellington Street</h3>
-          <address>355 Wellington St<br>London, ON N6A 3N7</address>
-          <div class="location-detail">
-            <i class="fas fa-phone"></i>
-            <a href="tel:5194337200">(519) 433-7200</a>
-          </div>
-          <div class="location-detail">
-            <i class="fas fa-clock"></i>
-            <div>
-              <span>Monday – Saturday</span><br>
-              <span>9:00 AM – 6:00 PM</span>
-            </div>
-          </div>
-          <a href="https://maps.google.com/?q=355+Wellington+St,+London,+ON" target="_blank" rel="noopener" class="btn-location">
-            Get Directions <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
         <div class="location-card featured" data-reveal>
-          <div class="location-number">02</div>
+          <div class="location-number">01</div>
           <span class="location-tag">Masonville Place</span>
           <h3>Richmond Street</h3>
           <address>1680 Richmond St<br>London, ON N6G 3Y9</address>
@@ -245,8 +218,8 @@
         </div>
 
         <div class="location-card" data-reveal>
-          <div class="location-number">03</div>
-          <span class="location-tag">West London</span>
+          <div class="location-number">02</div>
+          <span class="location-tag">Oxford &amp; Wonderland</span>
           <h3>Oxford Street West</h3>
           <address>551 Oxford St W, Unit A3-101<br>London, ON N6H 0H9</address>
           <div class="location-detail">
@@ -307,7 +280,7 @@
       <div class="cta-content">
         <p class="section-eyebrow">Ready?</p>
         <h2 class="section-title">Book Your Appointment</h2>
-        <p>Reserve your spot online at any of our three London locations.</p>
+        <p>Reserve your spot online at either of our two London locations.</p>
         <div class="cta-buttons">
           <a href="https://www.fresha.com/lvp/gentlemens-barber-richmond-street-london-0qXGL7" target="_blank" rel="noopener" class="btn-primary">Masonville — Book Now</a>
           <a href="https://www.fresha.com/lvp/gentlemens-barber-oxford-street-west-london-eXgEWj" target="_blank" rel="noopener" class="btn-primary">Oxford West — Book Now</a>
@@ -315,8 +288,6 @@
         <div class="cta-contact">
           <span>Or call us directly:</span>
           <div class="cta-phones">
-            <a href="tel:5194337200">(519) 433-7200</a>
-            <span class="dot">·</span>
             <a href="tel:5196456432">(519) 645-6432</a>
             <span class="dot">·</span>
             <a href="tel:5196570005">(519) 657-0005</a>
@@ -336,7 +307,7 @@
             <span class="logo-main">Gentlemen's</span>
             <span class="logo-sub">BARBER · LONDON</span>
           </a>
-          <p>London's premier barbershop for over 20 years. Three locations, one standard of excellence.</p>
+          <p>London's premier barbershop for over 20 years. Two locations, one standard of excellence.</p>
           <div class="social-links">
             <a href="https://www.instagram.com/gentlemensbarberlondon/" target="_blank" rel="noopener" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
@@ -352,19 +323,15 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#contact">Book Now</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Book Now</a></li>
           </ul>
         </div>
         <div class="footer-locations">
           <h4>Our Locations</h4>
-          <div class="footer-location">
-            <strong>Citi Plaza — Wellington St</strong>
-            <span>355 Wellington St · (519) 433-7200</span>
-          </div>
           <div class="footer-location">
             <strong>Masonville Place — Richmond St</strong>
             <span>1680 Richmond St · (519) 645-6432</span>

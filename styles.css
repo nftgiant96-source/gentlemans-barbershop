@@ -626,8 +626,9 @@ blockquote { quotes: none; }
 }
 .locations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 520px));
   gap: 3px;
+  justify-content: center;
 }
 .location-card {
   background: var(--dark);
@@ -938,7 +939,7 @@ blockquote { quotes: none; }
     grid-template-columns: 1fr;
   }
 
-  .locations-grid { grid-template-columns: 1fr; gap: 3px; }
+  .locations-grid { grid-template-columns: repeat(2, 1fr); gap: 3px; }
   .location-card { padding: 44px 36px; }
 
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1009,3 +1010,174 @@ blockquote { quotes: none; }
     grid-template-rows: repeat(5, 240px);
   }
 }
+
+
+/* ================================================
+   THEME TOGGLE BUTTON
+   ================================================ */
+.theme-toggle {
+  background: none;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--white);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+.theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-muted);
+}
+@media (max-width: 768px) {
+  .theme-toggle { width: 34px; height: 34px; font-size: 0.75rem; }
+}
+
+
+/* ================================================
+   PAGE BANNER  (inner pages)
+   ================================================ */
+.page-banner {
+  padding: 144px 0 64px;
+  background: var(--dark);
+  text-align: center;
+  border-bottom: 1px solid var(--dark-3);
+}
+.page-banner .section-title { margin-bottom: 0; }
+.page-banner .section-eyebrow { margin-bottom: 14px; }
+
+
+/* ================================================
+   LIGHT MODE
+   ================================================ */
+[data-theme="light"] {
+  --black:      #f7f4ef;
+  --dark:       #ede9e2;
+  --dark-2:     #e3ddd5;
+  --dark-3:     #cdc7be;
+  --dark-4:     #aba49b;
+  --white:      #1c1814;
+  --off-white:  #2c2721;
+  --gray:       #6b6158;
+  --gray-light: #504b44;
+  --gold-muted: rgba(201, 168, 76, 0.18);
+}
+
+/* Scrolled navbar — light glass */
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(247, 244, 239, 0.93);
+  border-bottom-color: rgba(201, 168, 76, 0.15);
+}
+
+/* Transparent navbar (home hero) — keep white */
+[data-theme="light"] #navbar:not(.scrolled) .logo-main         { color: #fafaf9; }
+[data-theme="light"] #navbar:not(.scrolled) .nav-links a        { color: rgba(250,250,249,0.65); }
+[data-theme="light"] #navbar:not(.scrolled) .nav-links a:hover  { color: #fafaf9; }
+[data-theme="light"] #navbar:not(.scrolled) .hamburger span     { background: #fafaf9; }
+[data-theme="light"] #navbar:not(.scrolled) .theme-toggle       { color: #fafaf9; border-color: rgba(250,250,249,0.3); }
+
+/* Scrolled navbar text */
+[data-theme="light"] #navbar.scrolled .nav-links a       { color: rgba(26,23,20,0.65); }
+[data-theme="light"] #navbar.scrolled .nav-links a:hover { color: #1c1814; }
+[data-theme="light"] #navbar.scrolled .logo-main         { color: #1c1814; }
+
+/* Buttons — always dark text on gold bg */
+[data-theme="light"] .btn-book,
+[data-theme="light"] .btn-primary { color: #09090b; }
+
+/* btn-outline on light sections */
+[data-theme="light"] .btn-outline {
+  color: var(--white);
+  border-color: rgba(28,24,20,0.25);
+}
+
+/* Hero has dark overlay — keep hero text white */
+[data-theme="light"] .hero-title { color: #fafaf9; }
+[data-theme="light"] .hero .hero-ctas .btn-outline {
+  color: #fafaf9;
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* Mobile menu on light bg */
+[data-theme="light"] .mobile-menu ul a   { color: #2c2721; }
+[data-theme="light"] .mobile-menu .btn-primary { color: #09090b; }
+
+/* Smooth logo text color transition */
+.logo-main { transition: color 0.3s; }
+
+
+/* ================================================
+   INSTAGRAM EMBED GRID
+   ================================================ */
+.ig-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 52px;
+}
+.ig-embed-item {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+}
+/* Force Instagram blockquote to fill the grid cell */
+.ig-embed-item .instagram-media {
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .ig-embed-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .ig-embed-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ================================================
+   RESPONSIVE — gallery new components
+   ================================================ */
+@media (max-width: 1000px) {
+  .ig-section-intro { flex-direction: column; gap: 40px; }
+  .ig-intro-stats { flex-direction: row; padding: 24px 32px; width: 100%; justify-content: center; gap: 0; }
+  .ig-stat { padding: 0 32px; border-bottom: none !important; }
+  .ig-stat:not(:last-child) { border-bottom: none; border-right: 1px solid var(--dark-3); }
+  .ig-stat-divider { display: none; }
+
+  .gallery-split-header { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .ig-profile-card { min-width: 0; width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .gallery-page-hero { height: 44vh; min-height: 320px; padding-bottom: 48px; }
+  .gallery-hero-title { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+
+  .ig-intro-stats { flex-direction: column; padding: 0; background: none; border: none; }
+  .ig-stat { padding: 20px 0; border-right: none !important; }
+  .ig-stat:not(:last-child) { border-bottom: 1px solid var(--dark-3) !important; }
+}
+
+
+/* ================================================
+   LIGHT MODE — gallery new components
+   ================================================ */
+[data-theme="light"] .gallery-hero-title,
+[data-theme="light"] .gallery-hero-sub { color: #fafaf9; }
+
+[data-theme="light"] .ig-profile-card {
+  background: var(--dark-2);
+  border-color: var(--dark-3);
+}
+[data-theme="light"] .ig-intro-stats {
+  background: var(--dark-2);
+  border-color: var(--dark-3);
+}
+[data-theme="light"] .ig-stat:not(:last-child) { border-color: var(--dark-3); }

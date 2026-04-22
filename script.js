@@ -5,19 +5,45 @@
 (function () {
   'use strict';
 
-  /* ---------- Navbar scroll effect ---------- */
   const navbar = document.getElementById('navbar');
+  const isHomePage = !!document.getElementById('home');
 
+
+  /* ---------- Navbar scroll effect ---------- */
   function handleScroll() {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    if (!isHomePage) return;
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // run on load
+
+  if (isHomePage) {
+    handleScroll();
+  } else {
+    // Inner pages: navbar always shows with background
+    navbar.classList.add('scrolled');
+  }
+
+
+  /* ---------- Theme toggle ---------- */
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    const icon = themeToggle ? themeToggle.querySelector('i') : null;
+    if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  }
+
+  // Apply saved theme (also set icon to match)
+  setTheme(localStorage.getItem('theme') || 'dark');
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }
 
 
   /* ---------- Mobile menu ---------- */
@@ -37,20 +63,11 @@
   }
 
   hamburger.addEventListener('click', toggleMenu);
-
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
 
-  /* ---------- Scroll reveal for [data-reveal] elements ---------- */
-  const revealElements = document.querySelectorAll('[data-reveal]');
-
+  /* ---------- Scroll reveal for [data-reveal] ---------- */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -58,41 +75,29 @@
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -60px 0px'
-  });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
 
 
   /* ---------- Service cards staggered reveal ---------- */
-  const serviceCards = document.querySelectorAll('.service-card');
-
   const serviceObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const index = parseInt(entry.target.dataset.index, 10) || 0;
-        setTimeout(() => {
-          entry.target.classList.add('revealed');
-        }, index * 90);
+        setTimeout(() => entry.target.classList.add('revealed'), index * 90);
         serviceObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  serviceCards.forEach((card, i) => {
+  document.querySelectorAll('.service-card').forEach((card, i) => {
     card.dataset.index = i;
     serviceObserver.observe(card);
   });
 
 
   /* ---------- Testimonial cards staggered reveal ---------- */
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
-
   const testObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -104,12 +109,9 @@
         testObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  testimonialCards.forEach((card, i) => {
+  document.querySelectorAll('.testimonial-card').forEach((card, i) => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(28px)';
     card.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
@@ -118,45 +120,46 @@
   });
 
 
-  /* ---------- Active nav link on scroll ---------- */
-  const sections = document.querySelectorAll('section[id]');
+  /* ---------- Active nav link ---------- */
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active', href === '#' + id);
-        });
-      }
+  if (isHomePage) {
+    // Scroll-based active state on home page
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+  } else {
+    // URL-based active state on inner pages
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === currentFile);
     });
-  }, {
-    threshold: 0.4
-  });
-
-  sections.forEach(section => sectionObserver.observe(section));
+  }
 
 
-  /* ---------- Smooth scroll for all anchor links ---------- */
+  /* ---------- Smooth scroll for same-page anchors ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      const navHeight = navbar.offsetHeight;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navbar.offsetHeight;
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
 
-
   /* ---------- Gallery image lazy load fade ---------- */
-  const galleryImages = document.querySelectorAll('.gallery-item img');
-
-  galleryImages.forEach(img => {
+  document.querySelectorAll('.gallery-item img').forEach(img => {
     img.style.opacity = '0';
     img.style.transition = 'opacity 0.6s ease';
     if (img.complete) {
